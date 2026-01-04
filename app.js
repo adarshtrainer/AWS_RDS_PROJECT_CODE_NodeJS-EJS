@@ -14,6 +14,7 @@ const db = mysql.createConnection({
   host: "database-1.xyz.ap-south-1.rds.amazonaws.com",
   user: "admin",
   password: "261997Adi#",
+  // Initial DB name
   database: "db",
   port: 4021,
 });
@@ -50,3 +51,4 @@ app.post("/add", (req, res) => {
 app.listen(3000, () => {
   console.log("🚀 App running at http://localhost:3000");
 });
+
