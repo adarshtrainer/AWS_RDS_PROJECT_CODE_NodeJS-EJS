@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node + RDS MySQL</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    input, button { padding: 8px; margin: 5px; }
+    table { margin-top: 20px; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>Add User</h2>
+<form action="/add" method="POST">
+  <input type="text" name="name" placeholder="Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <button type="submit">Save</button>
+</form>
+
+<h2>Users</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Created</th>
+  </tr>
+
+  <% users.forEach(user => { %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at %></td>
+    </tr>
+  <% }) %>
+</table>
+
+</body>
+</html>
